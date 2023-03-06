@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoxSettings">
+
+    <EditText
+        android:id="@+id/box_ssid"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="PLDTHOMEFIBRjHeg8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <Button
+        android:id="@+id/btn_connect_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONNECT BOX TO WIFI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_ssid_password"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <EditText
+        android:id="@+id/box_ssid_password"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="PLDTWIFIPMRbd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_ssid"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <EditText
+        android:id="@+id/box_username"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="shanikoy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_connect_wifi"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <Button
+        android:id="@+id/btn_set_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SET USERNAME"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_username"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/box_sim_card"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Sim Card Number"
+        android:inputType="textPersonName"
+        android:text="+639603915805"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_set_username"
+        app:layout_constraintVertical_bias="0.295" />
+
+    <EditText
+        android:id="@+id/box_pin"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="PIN"
+        android:inputType="numberPassword"
+        android:text="12345"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_sim_card"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_pin"
+        app:layout_constraintVertical_bias="0.127" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

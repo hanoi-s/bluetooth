@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".start">
+
+    <LinearLayout
+        android:padding="25sp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/ssid"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@color/gray"
+            android:hint="SSID"
+            android:text="PLDTHOMEFIBRjHeg8"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="@color/gray"
+            android:hint="PASSWORD"
+            android:text="PLDTWIFIPMRbd"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20sp"/>
+
+        <Button
+            android:id="@+id/btnsend"
+            android:layout_width="170sp"
+            android:layout_height="40sp"
+            android:background="@color/button"
+            android:text="SEND"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</RelativeLayout>
