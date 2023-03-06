@@ -4,62 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="12dp">
+
 
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
-        android:textSize="40dp"
+        android:text="Let's get started!"
+        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.061" />
 
-
-    <EditText
-        android:id="@+id/reg_et_username"
-        android:layout_width="361dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:text="shanikoy"
+    <TextView
+        android:id="@+id/label_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_register"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.063" />
 
-    <EditText
-        android:id="@+id/reg_et_email"
-        android:layout_width="361dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:text="shanickaminor926@gmail.com"
+    <TextView
+        android:id="@+id/label_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Box"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_et_username"
-        app:layout_constraintVertical_bias="0.047" />
-
-    <EditText
-        android:id="@+id/reg_et_user_mobile"
-        android:layout_width="361dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:hint="Mobile Number"
-        android:inputType="phone"
-        android:text="09065687340"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_et_email"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_password"
+        app:layout_constraintVertical_bias="0.051" />
 
     <EditText
         android:id="@+id/reg_et_password"
@@ -73,7 +60,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_et_user_mobile"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.035" />
+
+    <EditText
+        android:id="@+id/reg_et_username"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:text="shan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_user"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <EditText
+        android:id="@+id/reg_et_box_simcard"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Sim Card Number"
+        android:inputType="phone"
+        android:text="09603915805"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_box"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <EditText
+        android:id="@+id/reg_et_box_pin"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Pin"
+        android:inputType="numberPassword"
+        android:text="123456"
+        android:maxLength="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_box_simcard"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <EditText
+        android:id="@+id/reg_et_email"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:text="shanickaminor926@gmail.com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_username"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <EditText
+        android:id="@+id/reg_et_user_mobile"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:text="09065687340"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_email"
+        app:layout_constraintVertical_bias="0.028" />
 
     <Button
         android:id="@+id/btn_register"
@@ -83,7 +141,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_already" />
 
     <ProgressBar
         android:id="@+id/reg_progressBar"
@@ -93,22 +151,36 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_btn_login"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
 
     <TextView
         android:id="@+id/reg_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.713"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_et_password"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_box_pin"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <TextView
+        android:id="@+id/reg_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_et_box_pin"
+        app:layout_constraintVertical_bias="0.139" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
