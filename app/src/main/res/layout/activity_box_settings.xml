@@ -19,17 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.164" />
 
-    <Button
-        android:id="@+id/btn_connect_wifi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CONNECT BOX TO WIFI"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box_ssid_password"
-        app:layout_constraintVertical_bias="0.029" />
-
     <EditText
         android:id="@+id/box_ssid_password"
         android:layout_width="361dp"
@@ -42,6 +31,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/box_ssid"
         app:layout_constraintVertical_bias="0.024" />
+
+    <Button
+        android:id="@+id/btn_connect_wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONNECT BOX TO WIFI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_ssid_password"
+        app:layout_constraintVertical_bias="0.029" />
 
     <EditText
         android:id="@+id/box_username"

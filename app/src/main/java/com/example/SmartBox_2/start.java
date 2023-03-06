@@ -35,7 +35,7 @@ public class start extends AppCompatActivity {
 
                         String msg = sent_ssid + " " + sent_password;
 //                        msg+="\n";
-                        BoxSettings.outputStream.write(msg.getBytes());
+                        MainActivity.outputStream.write(msg.getBytes());
 
                         et_ssid.setText("PLDTHOMEFIBR5G6Uh4K");
                     }catch (Exception ex){
