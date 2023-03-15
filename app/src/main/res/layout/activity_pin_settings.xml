@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0DCD7"
+    tools:context=".PinSettings">
+
+    <View
+        android:id="@+id/divider_"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_change_box_pin"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/label_change_box_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change box PIN code"
+        android:textColor="#121212"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <ImageView
+        android:id="@+id/btn_changepin_back"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/arrow_back" />
+
+    <TextView
+        android:id="@+id/label_current_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current PIN code"
+        android:textSize="22sp"
+        android:textColor="#121212"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.059"
+        app:layout_constraintTop_toBottomOf="@+id/divider_"/>
+
+    <EditText
+        android:id="@+id/et_current_pin"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="numberPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_current_pin"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/label_new_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New PIN code"
+        android:textSize="22sp"
+        android:textColor="#121212"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.083"
+        app:layout_constraintTop_toBottomOf="@+id/et_current_pin"/>
+
+    <EditText
+        android:id="@+id/et_new_pin"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="6 digit PIN code"
+        android:inputType="numberPassword"
+        android:text="123456"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_new_pin"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_changepin_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPDATE PIN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.07"
+        android:backgroundTint="@color/new_button_color"
+        app:layout_constraintTop_toBottomOf="@+id/et_new_pin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
