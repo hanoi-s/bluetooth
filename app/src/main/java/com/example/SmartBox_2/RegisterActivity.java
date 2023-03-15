@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, email, password, mobile, pin, simcard;
@@ -73,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
             String pin2 = pin.getText().toString().trim();
             String simcard2 = simcard.getText().toString().trim();
 
+
             // Displays error if Username field is empty
             if(TextUtils.isEmpty(username2)) {
                 username.setError("Username is required");
@@ -122,6 +126,20 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
+            // Displays error if Password is less than 6 characters
+            if(mobile2.length() != 11) {
+                mobile.setError("Mobile number should be 11 digits");
+                mobile.requestFocus();
+                return;
+            }
+
+            // Displays error if Password is less than 6 characters
+            if(simcard2.length() != 11) {
+                simcard.setError("Box's sim card should be 11 digits");
+                simcard.requestFocus();
+                return;
+            }
+
             // Displays the progress bar
             progressBar.setVisibility(View.VISIBLE);
 
@@ -137,17 +155,16 @@ public class RegisterActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                 } else {
                     mDatabase.orderByChild("mobile_number").equalTo(mobile2).get().addOnCompleteListener(task2 -> {
-                       String result2 = String.valueOf(task2.getResult().getValue());
-                       // If mobile number is already in use
+                        String result2 = String.valueOf(task2.getResult().getValue());
+                        // If mobile number is already in use
                         if(result2 != "null") {
                             Toast.makeText(this, "Mobile number is already in use", Toast.LENGTH_SHORT).show();
                             mobile.requestFocus();
                             progressBar.setVisibility(View.GONE);
                         } else {
-
                             mDatabase.orderByChild("box_simcard").equalTo(simcard2).get().addOnCompleteListener(task3 -> {
-                               String result3 = String.valueOf(task3.getResult().getValue());
-                               // If box's sim card is already in use
+                                String result3 = String.valueOf(task3.getResult().getValue());
+                                // If box's sim card is already in use
                                 if(result3 != "null") {
                                     Toast.makeText(this, "Box's sim card is already in use", Toast.LENGTH_SHORT).show();
                                     simcard.requestFocus();
@@ -157,11 +174,40 @@ public class RegisterActivity extends AppCompatActivity {
                                     fAuth.createUserWithEmailAndPassword(email2, password2).addOnCompleteListener(task -> {
                                         // This is what happens when the User creation was successful
                                         if(task.isSuccessful()) {
+
+                                            // +63 instead of 0 for phone numbers
+                                            String country_code = "+63";
+                                            String final_phone1 = country_code + mobile2.substring(1);
+                                            String final_phone2 = country_code + simcard2.substring(1);
+
+                                            // Get the date so that a notification can be made
+                                            Date date = new Date();
+                                            SimpleDateFormat dateAndTimeformatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                            SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+                                            SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
+
+
+                                            String dateAndTime = dateAndTimeformatter.format(date);
+                                            String formattedDate = dateFormatter.format(date);
+                                            String formattedTime = timeFormatter.format(date);
+                                            String dateAndTime2 = formattedDate + " " + formattedTime;
+
+                                            String firstNotification = "Account successfully created";
+
+                                            // Commands for pushing the user's data into the database
                                             mDatabase.child(fAuth.getCurrentUser().getUid()).child("username").setValue(username2);
                                             mDatabase.child(fAuth.getCurrentUser().getUid()).child("email").setValue(email2);
-                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("mobile_number").setValue(mobile2);
-                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("box_simcard").setValue(simcard2);
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("mobile_number").setValue(final_phone1);
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("box_simcard").setValue(final_phone2);
                                             mDatabase.child(fAuth.getCurrentUser().getUid()).child("box_pin").setValue(pin2);
+                                            // mDatabase.child(fAuth.getCurrentUser().getUid()).child("notifications").child(pushedDate).setValue("Account successfully created");
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("latest_notification").setValue(firstNotification);
+
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("notifications").child(dateAndTime2).child("date").setValue(formattedDate);
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("notifications").child(dateAndTime2).child("time").setValue(formattedTime);
+                                            mDatabase.child(fAuth.getCurrentUser().getUid()).child("notifications").child(dateAndTime2).child("message").setValue(firstNotification);
+
+
 
                                             // Sends verification link to user's given email
                                             FirebaseUser user = fAuth.getCurrentUser();
